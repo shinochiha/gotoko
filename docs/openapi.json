@@ -396,6 +396,385 @@
           "Contact"
         ]
       }
+    },
+    "/api/v1/products": {
+      "post": {
+        "description": "Use this method to create Product",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/headerParam.Accept-Language"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Product"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Product"
+                }
+              }
+            },
+            "description": "Success"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error.BadRequest"
+                }
+              }
+            },
+            "description": "A validation exception has occurred."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error.Unauthorized"
+                }
+              }
+            },
+            "description": "Invalid authorization credentials."
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error.Forbidden"
+                }
+              }
+            },
+            "description": "User doesn't have permission to access the resource."
+          }
+        },
+        "summary": "Create Product",
+        "tags": [
+          "Product"
+        ]
+      },
+      "get": {
+        "description": "Use this method to get list of Product",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/headerParam.Accept-Language"
+          },
+          {
+            "$ref": "#/components/parameters/queryParam.Any"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductList"
+                }
+              }
+            },
+            "description": "Success"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error.BadRequest"
+                }
+              }
+            },
+            "description": "A validation exception has occurred."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error.Unauthorized"
+                }
+              }
+            },
+            "description": "Invalid authorization credentials."
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error.Forbidden"
+                }
+              }
+            },
+            "description": "User doesn't have permission to access the resource."
+          }
+        },
+        "summary": "Get Product",
+        "tags": [
+          "Product"
+        ]
+      }
+    },
+    "/api/v1/products/{id}": {
+      "get": {
+        "description": "Use this method to get Product by id",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/pathParam.ID"
+          },
+          {
+            "$ref": "#/components/parameters/headerParam.Accept-Language"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Product"
+                }
+              }
+            },
+            "description": "Success"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error.BadRequest"
+                }
+              }
+            },
+            "description": "A validation exception has occurred."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error.Unauthorized"
+                }
+              }
+            },
+            "description": "Invalid authorization credentials."
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error.Forbidden"
+                }
+              }
+            },
+            "description": "User doesn't have permission to access the resource."
+          }
+        },
+        "summary": "Get Product By ID",
+        "tags": [
+          "Product"
+        ]
+      },
+      "put": {
+        "description": "Use this method to update Product by id",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/pathParam.ID"
+          },
+          {
+            "$ref": "#/components/parameters/headerParam.Accept-Language"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Product"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Product"
+                }
+              }
+            },
+            "description": "Success"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error.BadRequest"
+                }
+              }
+            },
+            "description": "A validation exception has occurred."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error.Unauthorized"
+                }
+              }
+            },
+            "description": "Invalid authorization credentials."
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error.Forbidden"
+                }
+              }
+            },
+            "description": "User doesn't have permission to access the resource."
+          }
+        },
+        "summary": "Update Product By ID",
+        "tags": [
+          "Product"
+        ]
+      },
+      "patch": {
+        "description": "Use this method to partially update Product by id",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/pathParam.ID"
+          },
+          {
+            "$ref": "#/components/parameters/headerParam.Accept-Language"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Product"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Product"
+                }
+              }
+            },
+            "description": "Success"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error.BadRequest"
+                }
+              }
+            },
+            "description": "A validation exception has occurred."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error.Unauthorized"
+                }
+              }
+            },
+            "description": "Invalid authorization credentials."
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error.Forbidden"
+                }
+              }
+            },
+            "description": "User doesn't have permission to access the resource."
+          }
+        },
+        "summary": "Partially Update Product By ID",
+        "tags": [
+          "Product"
+        ]
+      },
+      "delete": {
+        "description": "Use this method to delete Product by id",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/pathParam.ID"
+          },
+          {
+            "$ref": "#/components/parameters/headerParam.Accept-Language"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Product"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Product"
+                }
+              }
+            },
+            "description": "Success"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error.BadRequest"
+                }
+              }
+            },
+            "description": "A validation exception has occurred."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error.Unauthorized"
+                }
+              }
+            },
+            "description": "Invalid authorization credentials."
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error.Forbidden"
+                }
+              }
+            },
+            "description": "User doesn't have permission to access the resource."
+          }
+        },
+        "summary": "Delete Product By ID",
+        "tags": [
+          "Product"
+        ]
+      }
     }
   },
   "components": {
@@ -598,6 +977,106 @@
           }
         },
         "type": "object"
+      },
+      "Product": {
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "created_at": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "id": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "is_active": {
+            "type": "boolean"
+          },
+          "name": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "updated_at": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "ProductList": {
+        "properties": {
+          "count": {
+            "type": "integer"
+          },
+          "links": {
+            "properties": {
+              "first": {
+                "type": "string"
+              },
+              "last": {
+                "type": "string"
+              },
+              "next": {
+                "type": "string"
+              },
+              "previous": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "page_context": {
+            "properties": {
+              "page": {
+                "type": "integer"
+              },
+              "per_page": {
+                "type": "integer"
+              },
+              "total_pages": {
+                "type": "integer"
+              }
+            },
+            "type": "object"
+          },
+          "results": {
+            "items": {
+              "properties": {
+                "code": {
+                  "type": "string"
+                },
+                "created_at": {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                "id": {
+                  "format": "uuid",
+                  "type": "string"
+                },
+                "is_active": {
+                  "type": "boolean"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "quantity": {
+                  "type": "number"
+                },
+                "updated_at": {
+                  "format": "date-time",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
       }
     },
     "securitySchemes": {
@@ -615,6 +1094,9 @@
   "tags": [
     {
       "name": "Contact"
+    },
+    {
+      "name": "Product"
     }
   ],
   "externalDocs": {

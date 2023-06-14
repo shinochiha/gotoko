@@ -3,6 +3,7 @@ package src
 import (
 	"github.com/shinochiha/gotoko/app"
 	"github.com/shinochiha/gotoko/src/contact"
+	"github.com/shinochiha/gotoko/src/product"
 	// import : DONT REMOVE THIS COMMENT
 )
 
@@ -26,6 +27,7 @@ type migratorUtil struct {
 
 func (*migratorUtil) Configure() {
 	app.DB().RegisterTable("main", contact.Contact{})
+	app.DB().RegisterTable("main", product.Product{})
 	// RegisterTable : DONT REMOVE THIS COMMENT
 }
 
