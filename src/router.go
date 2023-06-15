@@ -43,8 +43,8 @@ func (r *routerUtil) Configure() {
 	app.Server().AddRoute("/api/v1/products/{id}", "DELETE", product.REST().DeleteByID, product.OpenAPI().DeleteByID())
 
 	app.Server().AddRoute("/api/v1/payment_invoices", "POST", paymentinvoice.REST().Create, paymentinvoice.OpenAPI().Create())
-	app.Server().AddRoute("/api/v1/payment_invoices", "POST", paymentinvoice.REST().Create, paymentinvoice.OpenAPI().CreditCardWithoutInstallment())
-	app.Server().AddRoute("/api/v1/payment_invoices", "POST", paymentinvoice.REST().Create, paymentinvoice.OpenAPI().CreditCardWithInstallment())
+	app.Server().AddRoute("/api/v1/payment_invoices_credit_card_without_installment", "POST", paymentinvoice.REST().Create, paymentinvoice.OpenAPI().CreditCardWithoutInstallment())
+	app.Server().AddRoute("/api/v1/payment_invoices_credit_card_with_installment", "POST", paymentinvoice.REST().Create, paymentinvoice.OpenAPI().CreditCardWithInstallment())
 	app.Server().AddRoute("/api/v1/payment_invoices", "GET", paymentinvoice.REST().Get, paymentinvoice.OpenAPI().Get())
 
 	app.Server().AddRoute("/api/v1/payment_subscriptions", "POST", paymentsubscription.REST().Create, paymentsubscription.OpenAPI().Create())

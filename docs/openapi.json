@@ -526,114 +526,6 @@
           "Payment"
         ]
       },
-      "post": {
-        "description": "Use this method to create PaymentInvoice Credit Card without installment",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/headerParam.Accept-Language"
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentInvoice"
-                }
-              }
-            },
-            "description": "Success"
-          },
-          "400": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error.BadRequest"
-                }
-              }
-            },
-            "description": "A validation exception has occurred."
-          },
-          "401": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error.Unauthorized"
-                }
-              }
-            },
-            "description": "Invalid authorization credentials."
-          },
-          "403": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error.Forbidden"
-                }
-              }
-            },
-            "description": "User doesn't have permission to access the resource."
-          }
-        },
-        "summary": "Credit Card without installment",
-        "tags": [
-          "Payment"
-        ]
-      },
-      "post": {
-        "description": "Use this method to create PaymentInvoice Credit Card with installment",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/headerParam.Accept-Language"
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentInvoice"
-                }
-              }
-            },
-            "description": "Success"
-          },
-          "400": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error.BadRequest"
-                }
-              }
-            },
-            "description": "A validation exception has occurred."
-          },
-          "401": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error.Unauthorized"
-                }
-              }
-            },
-            "description": "Invalid authorization credentials."
-          },
-          "403": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error.Forbidden"
-                }
-              }
-            },
-            "description": "User doesn't have permission to access the resource."
-          }
-        },
-        "summary": "Credit Card with installment",
-        "tags": [
-          "Payment"
-        ]
-      },
       "get": {
         "description": "Use this method to get list of PaymentInvoice",
         "parameters": [
@@ -687,6 +579,118 @@
           }
         },
         "summary": "Get PaymentInvoice",
+        "tags": [
+          "Payment"
+        ]
+      }
+    },
+    "/api/v1/payment_invoices_credit_card_with_installment": {
+      "post": {
+        "description": "Use this method to create PaymentInvoice Credit Card with installment",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/headerParam.Accept-Language"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentInvoice"
+                }
+              }
+            },
+            "description": "Success"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error.BadRequest"
+                }
+              }
+            },
+            "description": "A validation exception has occurred."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error.Unauthorized"
+                }
+              }
+            },
+            "description": "Invalid authorization credentials."
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error.Forbidden"
+                }
+              }
+            },
+            "description": "User doesn't have permission to access the resource."
+          }
+        },
+        "summary": "Credit Card with installment",
+        "tags": [
+          "Payment"
+        ]
+      }
+    },
+    "/api/v1/payment_invoices_credit_card_without_installment": {
+      "post": {
+        "description": "Use this method to create PaymentInvoice Credit Card without installment",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/headerParam.Accept-Language"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentInvoice"
+                }
+              }
+            },
+            "description": "Success"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error.BadRequest"
+                }
+              }
+            },
+            "description": "A validation exception has occurred."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error.Unauthorized"
+                }
+              }
+            },
+            "description": "Invalid authorization credentials."
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error.Forbidden"
+                }
+              }
+            },
+            "description": "User doesn't have permission to access the resource."
+          }
+        },
+        "summary": "Credit Card without installment",
         "tags": [
           "Payment"
         ]
@@ -1813,14 +1817,19 @@
                 "payment": {
                   "properties": {
                     "credit_card": {
-                      "bank": {
-                        "type": "string"
+                      "installment": {
+                        "properties": {
+                          "type": {
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
                       },
                       "properties": {
                         "installment": {
                           "properties": {
-                            "type": {
-                              "type": "string"
+                            "term": {
+                              "type": "integer"
                             }
                           },
                           "type": "object"
